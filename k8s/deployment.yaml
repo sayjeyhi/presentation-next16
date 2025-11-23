@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: next16
+  labels:
+    app: next16
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: next16
+  template:
+    metadata:
+      labels:
+        app: next16
+    spec:
+      containers:
+        - name: next16
+          image: ghcr.io/sayjeyhi/presentation-next16:latest
+          ports:
+            - containerPort: 8080
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+          resources:
+            limits:
+              cpu: '500m'
+              memory: '512Mi'
+            requests:
+              cpu: '250m'
+              memory: '256Mi'

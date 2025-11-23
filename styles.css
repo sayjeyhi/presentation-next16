@@ -1,0 +1,31 @@
+body, .dark .slidev-slide-content {
+  font-family: 'Inter', sans-serif;
+  background-color: #000 !important;
+}
+
+h1 {
+  font-weight: 900;
+  background: #BECF24;
+background: linear-gradient(to right, #BECF24 0%, #95E6FF 50%, #CF8377 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+strong {
+  color: #66a1ff
+}
+
+thead tr, tbody tr:not(:last-child) {
+  border-bottom-width: 2px !important;
+  border-color: rgb(255 255 255 / 37%) !important;
+}
+
+tbody tr:last-child {
+  border: none !important;
+}
+
+th:not(:first-child), td:not(:first-child) {
+  border-left-width: 1px !important;
+  border-color: rgba(255, 216, 121, 0.75) !important;
+  border-style: dashed !important;
+}

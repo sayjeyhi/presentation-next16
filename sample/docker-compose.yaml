@@ -1,0 +1,24 @@
+# ONLY FOR DEVELOPMENT USAGE
+
+services:
+  next_db:
+    image: postgres:${DB_VERSION:-16}
+    container_name: next_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-mydb}
+    ports:
+      - ${DB_FORWARD_PORT:-5432}:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - next_network
+
+networks:
+  next_network:
+
+volumes:
+  db_data:
+
